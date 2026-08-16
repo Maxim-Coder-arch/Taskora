@@ -1,0 +1,447 @@
+// ============================================================
+// BRAND
+// ============================================================
+
+$color-brand-50:  #f5f3ff;
+$color-brand-100: #ede9fe;
+$color-brand-200: #ddd6fe;
+$color-brand-300: #c4b5fd;
+$color-brand-400: #a78bfa;
+$color-brand-500: #7c5cff;
+$color-brand-600: #6d4aff;
+$color-brand-700: #5b3fd6;
+$color-brand-800: #4c35b5;
+$color-brand-900: #3f2c91;
+
+
+// ============================================================
+// PRIMARY
+// ============================================================
+
+$color-primary:       $color-brand-600;
+$color-primary-hover: $color-brand-700;
+$color-primary-active:$color-brand-800;
+$color-primary-light: $color-brand-50;
+$color-primary-soft:  $color-brand-100;
+
+
+// ============================================================
+// BASE / WHITE
+// ============================================================
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+
+// ============================================================
+// BACKGROUNDS
+// ============================================================
+
+// Main application background
+$color-bg-app:        #ffffff;
+
+// Sidebar
+$color-bg-sidebar:    #fbfbfd;
+
+// Main content areas
+$color-bg-content:    #ffffff;
+
+// Cards
+$color-bg-card:       #ffffff;
+
+// Kanban columns
+$color-bg-column:     #f8f9fc;
+
+// Hovered elements
+$color-bg-hover:      #f5f5f8;
+
+// Active / selected element
+$color-bg-active:     #f1efff;
+// $color-bg-active:     #dedaf5b7;
+
+// Input background
+$color-bg-input:      #ffffff;
+
+// Secondary surface
+$color-bg-secondary:  #f7f7fa;
+
+// Tertiary surface
+$color-bg-tertiary:   #f1f2f5;
+
+// Overlay
+$color-bg-overlay:    rgba(15, 15, 25, 0.45);
+
+
+// ============================================================
+// TEXT
+// ============================================================
+
+// Main headings
+$color-text-primary:   #17171c;
+
+// Normal body text
+$color-text-secondary: #5f606b;
+
+// Muted / supporting text
+$color-text-tertiary:  #858692;
+
+// Disabled text
+$color-text-disabled:  #b5b6bf;
+
+// Placeholder
+$color-text-placeholder:#a5a6b0;
+
+// Text on brand-colored backgrounds
+$color-text-on-primary: #ffffff;
+
+// Links
+$color-text-link:      $color-brand-600;
+$color-text-link-hover:$color-brand-700;
+
+
+// ============================================================
+// BORDERS
+// ============================================================
+
+$color-border:         #e8e8ed;
+$color-border-light:   #eeeeF2;
+$color-border-medium:  #dcdde4;
+$color-border-strong:  #c9cad3;
+
+$color-border-focus:   $color-brand-500;
+$color-border-primary: $color-brand-200;
+
+
+// ============================================================
+// DIVIDERS
+// ============================================================
+
+$color-divider:        #ededf1;
+$color-divider-light:  #f2f2f5;
+
+
+// ============================================================
+// ICONS
+// ============================================================
+
+$color-icon-primary:   #4b4c57;
+$color-icon-secondary: #777884;
+$color-icon-muted:     #a1a2ac;
+$color-icon-disabled:  #c5c6ce;
+
+$color-icon-primary-hover: $color-brand-600;
+
+
+// ============================================================
+// STATUS — SUCCESS / GREEN
+// ============================================================
+
+$color-success-50:     #ecfdf3;
+$color-success-100:    #d1fae5;
+$color-success-200:    #a7f3d0;
+$color-success-300:    #6ee7b7;
+$color-success-400:    #34d399;
+$color-success-500:    #22c55e;
+$color-success-600:    #16a34a;
+$color-success-700:    #15803d;
+
+$color-success:        $color-success-500;
+$color-success-hover:  $color-success-600;
+$color-success-bg:     $color-success-50;
+$color-success-border: $color-success-200;
+$color-success-text:   $color-success-700;
+
+
+// ============================================================
+// STATUS — WARNING / ORANGE
+// ============================================================
+
+$color-warning-50:     #fff7ed;
+$color-warning-100:    #ffedd5;
+$color-warning-200:    #fed7aa;
+$color-warning-300:    #fdba74;
+$color-warning-400:    #fb923c;
+$color-warning-500:    #f97316;
+$color-warning-600:    #ea580c;
+$color-warning-700:    #c2410c;
+
+$color-warning:        $color-warning-500;
+$color-warning-hover:  $color-warning-600;
+$color-warning-bg:     $color-warning-50;
+$color-warning-border: $color-warning-200;
+$color-warning-text:   $color-warning-700;
+
+
+// ============================================================
+// STATUS — ERROR / RED
+// ============================================================
+
+$color-error-50:       #fef2f2;
+$color-error-100:      #fee2e2;
+$color-error-200:      #fecaca;
+$color-error-300:      #fca5a5;
+$color-error-400:      #f87171;
+$color-error-500:      #ef4444;
+$color-error-600:      #dc2626;
+$color-error-700:      #b91c1c;
+
+$color-error:          $color-error-500;
+$color-error-hover:    $color-error-600;
+$color-error-bg:       $color-error-50;
+$color-error-border:   $color-error-200;
+$color-error-text:     $color-error-700;
+
+
+// ============================================================
+// STATUS — INFO / BLUE
+// ============================================================
+
+$color-info-50:        #eff6ff;
+$color-info-100:       #dbeafe;
+$color-info-200:       #bfdbfe;
+$color-info-300:       #93c5fd;
+$color-info-400:       #60a5fa;
+$color-info-500:       #3b82f6;
+$color-info-600:       #2563eb;
+$color-info-700:       #1d4ed8;
+
+$color-info:           $color-info-500;
+$color-info-hover:     $color-info-600;
+$color-info-bg:        $color-info-50;
+$color-info-border:    $color-info-200;
+$color-info-text:      $color-info-700;
+
+
+// ============================================================
+// KANBAN COLUMN COLORS
+// ============================================================
+
+// To Do
+$color-column-todo:        #8b5cf6;
+$color-column-todo-bg:     #f5f3ff;
+$color-column-todo-border: #ddd6fe;
+
+// In Progress
+$color-column-progress:        #3b82f6;
+$color-column-progress-bg:     #eff6ff;
+$color-column-progress-border: #bfdbfe;
+
+// Review
+$color-column-review:        #f97316;
+$color-column-review-bg:     #fff7ed;
+$color-column-review-border: #fed7aa;
+
+// Done
+$color-column-done:        #22c55e;
+$color-column-done-bg:     #ecfdf3;
+$color-column-done-border: #bbf7d0;
+
+
+// ============================================================
+// PRIORITIES
+// ============================================================
+
+// Low
+$color-priority-low:      #64748b;
+$color-priority-low-bg:   #f1f5f9;
+$color-priority-low-text: #475569;
+
+// Medium
+$color-priority-medium:      #f59e0b;
+$color-priority-medium-bg:   #fffbeb;
+$color-priority-medium-text: #b45309;
+
+// High
+$color-priority-high:      #f97316;
+$color-priority-high-bg:   #fff7ed;
+$color-priority-high-text: #c2410c;
+
+// Urgent
+$color-priority-urgent:      #ef4444;
+$color-priority-urgent-bg:   #fef2f2;
+$color-priority-urgent-text: #b91c1c;
+
+
+// ============================================================
+// TAGS / LABELS
+// ============================================================
+
+// Purple
+$color-tag-purple-bg:   #f3e8ff;
+$color-tag-purple-text: #7e22ce;
+
+// Blue
+$color-tag-blue-bg:     #dbeafe;
+$color-tag-blue-text:   #1d4ed8;
+
+// Green
+$color-tag-green-bg:    #dcfce7;
+$color-tag-green-text:  #15803d;
+
+// Orange
+$color-tag-orange-bg:   #ffedd5;
+$color-tag-orange-text: #c2410c;
+
+// Red
+$color-tag-red-bg:      #fee2e2;
+$color-tag-red-text:    #b91c1c;
+
+// Gray
+$color-tag-gray-bg:     #f1f5f9;
+$color-tag-gray-text:   #475569;
+
+
+// ============================================================
+// NOTIFICATIONS
+// ============================================================
+
+$color-notification-dot:       #ef4444;
+$color-notification-unread-bg: #f5f3ff;
+$color-notification-hover-bg:  #f7f7fa;
+
+
+// ============================================================
+// AVATAR COLORS
+// ============================================================
+
+$color-avatar-purple: #8b5cf6;
+$color-avatar-blue:   #3b82f6;
+$color-avatar-green:  #22c55e;
+$color-avatar-orange: #f97316;
+$color-avatar-pink:   #ec4899;
+$color-avatar-red:    #ef4444;
+$color-avatar-cyan:   #06b6d4;
+$color-avatar-indigo: #6366f1;
+
+
+// ============================================================
+// INTERACTIVE STATES
+// ============================================================
+
+$color-focus-ring:       rgba(124, 92, 255, 0.18);
+
+$color-selection:        rgba(124, 92, 255, 0.12);
+
+$color-drag-overlay:     rgba(124, 92, 255, 0.06);
+
+$color-skeleton:         #eeeeF2;
+
+$color-skeleton-shimmer: #f7f7fa;
+
+
+// ============================================================
+// BUTTONS
+// ============================================================
+
+// Primary
+$color-button-primary-bg:      $color-brand-600;
+$color-button-primary-hover:   $color-brand-700;
+$color-button-primary-active:  $color-brand-800;
+$color-button-primary-text:    #ffffff;
+
+// Secondary
+$color-button-secondary-bg:     #ffffff;
+$color-button-secondary-hover:  #f7f7fa;
+$color-button-secondary-active: #f1f1f5;
+$color-button-secondary-text:   #3f4049;
+$color-button-secondary-border: #dedfe6;
+
+// Ghost
+$color-button-ghost-hover:      #f5f5f8;
+$color-button-ghost-active:     #ededf3;
+$color-button-ghost-text:       #555661;
+
+
+// ============================================================
+// INPUTS
+// ============================================================
+
+$color-input-bg:              #ffffff;
+$color-input-border:          #dedfe6;
+$color-input-border-hover:    #c8c9d2;
+$color-input-border-focus:    $color-brand-500;
+$color-input-placeholder:     #a5a6b0;
+$color-input-text:            #17171c;
+$color-input-disabled-bg:     #f5f5f7;
+$color-input-disabled-text:   #b5b6bf;
+
+
+// ============================================================
+// DROPDOWNS / POPOVERS
+// ============================================================
+
+$color-popover-bg:            #ffffff;
+$color-popover-border:        #e5e5eb;
+$color-popover-hover:         #f6f6f9;
+$color-popover-active:        #f1efff;
+
+
+// ============================================================
+// TOOLTIPS
+// ============================================================
+
+$color-tooltip-bg:            #22232a;
+$color-tooltip-text:          #ffffff;
+
+
+// ============================================================
+// SCROLLBAR
+// ============================================================
+
+$color-scrollbar-track:       transparent;
+$color-scrollbar-thumb:       #d9dae1;
+$color-scrollbar-thumb-hover: #c4c5ce;
+
+
+// ============================================================
+// DRAG & DROP
+// ============================================================
+
+$color-dnd-placeholder:       #ede9fe;
+$color-dnd-border:            #c4b5fd;
+$color-dnd-shadow:            rgba(76, 53, 181, 0.12);
+
+
+// ============================================================
+// SHADOWS
+// ============================================================
+
+$color-shadow-xs: rgba(15, 15, 25, 0.03);
+$color-shadow-sm: rgba(15, 15, 25, 0.05);
+$color-shadow-md: rgba(15, 15, 25, 0.08);
+$color-shadow-lg: rgba(15, 15, 25, 0.12);
+$color-shadow-xl: rgba(15, 15, 25, 0.16);
+
+
+// ============================================================
+// GRADIENTS
+// ============================================================
+
+$gradient-brand: linear-gradient(
+    135deg,
+    $color-brand-500,
+    $color-brand-700
+);
+
+$gradient-brand-soft: linear-gradient(
+    135deg,
+    $color-brand-50,
+    $color-brand-100
+);
+
+
+// ============================================================
+// SPECIAL / BRAND ELEMENTS
+// ============================================================
+
+// Taskora logo
+$color-logo-primary:   $color-brand-600;
+$color-logo-secondary: $color-brand-400;
+
+// Active sidebar item
+$color-sidebar-active-bg:   #f1efff;
+$color-sidebar-active-text: $color-brand-700;
+$color-sidebar-active-icon: $color-brand-600;
+
+// Workspace indicator
+$color-workspace-dot: $color-brand-500;

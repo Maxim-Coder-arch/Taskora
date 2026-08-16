@@ -1,0 +1,67 @@
+@use "../../../styles/includes.scss" as *;
+
+.side-panel {
+    width: 280px;
+    border-right: solid 1px $color-divider;
+
+    &__logo {
+        & span {
+            @include font(1.8rem, 800);
+            color: $color-text-primary;
+        }
+    }
+
+    &__team-choice {
+        padding: 8px;
+        border: solid 1px $color-divider;
+
+        &:hover {
+            background-color: rgba($color-button-primary-hover, .1);
+        }
+
+        & span {
+            @include font(1rem, 600);
+            color: $color-text-primary;
+        }
+    }
+
+    &__select {
+        background-color: $color-bg-secondary;
+
+        &__team-button {
+            padding-bottom: 8px;
+            border-bottom: solid 1px $color-border-medium;
+
+            & span {
+                @include font(14px, 400);
+                color: $color-text-primary;
+            }
+
+            &:hover span {
+                color: $color-info-500;
+            }
+        }
+
+        &__add-team {
+            background-color: $color-info-400;
+            @include font(1rem, 500);
+            color: $color-text-on-primary;
+            padding: 8px 12px;
+
+            &:hover {
+                background-color: $color-info-500;
+            }
+        }
+
+        &__confirm {
+            background-color: $color-success-500;
+            @include font(1rem, 500);
+            color: $color-text-on-primary;
+            padding: 8px 12px;
+
+            &:hover {
+                background-color: $color-success-600;
+            }
+        }
+    }
+}
