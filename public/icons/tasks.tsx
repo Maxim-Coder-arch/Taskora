@@ -1,0 +1,14 @@
+const TasksIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
+                <path d="m10.663 15l2.145 2l4.53-6" />
+                <path d="M18.333 7H9.667A2.666 2.666 0 0 0 7 9.667v8.666A2.666 2.666 0 0 0 9.667 21h8.666A2.666 2.666 0 0 0 21 18.333V9.667A2.666 2.666 0 0 0 18.333 7" />
+                <path d="M16.535 3.667a2.66 2.66 0 0 0-2.695-1.303L4.608 3.736a2.666 2.666 0 0 0-2.245 3.03l1.304 8.774" />
+            </g>
+        </svg>
+    )
+}
+
+export default TasksIcon;

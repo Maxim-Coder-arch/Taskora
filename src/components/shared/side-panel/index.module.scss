@@ -1,10 +1,12 @@
 @use "../../../styles/includes.scss" as *;
 
 .side-panel {
-    width: 280px;
+    width: 300px;
     border-right: solid 1px $color-divider;
 
     &__logo {
+        border-bottom: solid 1px $color-divider;
+        height: 80px;
         & span {
             @include font(1.8rem, 800);
             color: $color-text-primary;
@@ -26,7 +28,7 @@
     }
 
     &__select {
-        background-color: $color-bg-secondary;
+        background-color: rgba($color-bg-secondary, .6);
 
         &__team-button {
             padding-bottom: 8px;
@@ -61,6 +63,90 @@
 
             &:hover {
                 background-color: $color-success-600;
+            }
+        }
+    }
+
+    &__pages {
+        & a {
+            padding: 8px;
+            border: solid 1px $color-divider;
+
+            & svg {
+                width: 30px;
+                height: 30px;
+                color: rgba($color-text-primary, .7);
+            }
+
+            &:hover {
+                background-color: rgba($color-button-primary-hover, .1);
+            }
+        }
+
+        & span {
+            @include font(14px, 600);
+            color: $color-text-primary;
+        }
+    }
+
+    &__spaces {
+        &__header {
+            & span {
+                @include font(16px, 500);
+                color: rgba($color-text-primary, .5);
+            }
+
+            & button {
+                padding: 8px;
+                border: solid 1px $color-divider;
+                background-color: rgba($color-button-primary-hover, .1);
+
+                & svg {
+                    width: 16px;
+                    height: 16px;
+                    color: $color-info-600;
+                }
+
+                &:hover {
+                    background-color: rgba($color-button-primary-hover, .3);
+                }
+            }
+        }
+
+        &__list {
+            & button {
+                border: solid 1px $color-divider;
+                padding: 8px 12px;
+                @include font(16px, 500);
+                color: $color-text-primary;
+
+                &:hover {
+                    background-color: rgba($color-button-primary-hover, .1);
+                }
+            }
+
+            &__active {
+                color: $color-info-500 !important;
+                font-weight: 600 !important;
+                background-color: rgba($color-button-primary-hover, .1);
+            }
+        }
+
+        &__add-space {
+            &__form {
+                background: $color-black;
+            }
+
+            &__button {
+                padding: 8px 12px;
+                border: solid 1px $color-divider;
+                background-color: rgba($color-button-primary-hover, .1);
+                color: $color-info-600;
+                @include font(16px, 600);
+
+                &:hover {
+                    background-color: rgba($color-button-primary-hover, .2);
+                }
             }
         }
     }

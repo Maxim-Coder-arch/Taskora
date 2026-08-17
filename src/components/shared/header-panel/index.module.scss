@@ -1,0 +1,78 @@
+@use "../../../styles/includes.scss" as *;
+
+.header-panel {
+    height: 80px;
+    border-bottom: solid 1px $color-divider;
+
+    &__active {
+        & span {
+            @include font(1rem, 500);
+        }
+    }
+
+    &__user-control {
+        &__settings {
+            cursor: pointer;
+
+            & svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            &:hover {
+                rotate: 90deg;
+            }
+        }
+
+        &__profile-points {
+            border: solid 1px $color-divider;
+
+            & a {
+                @include font(1rem, 600);
+                color: $color-text-secondary;
+                border-bottom: solid 1px $color-divider;
+
+                &:hover {
+                    background-color: rgba($color-info-200, .3); 
+                }
+            }
+
+            & button {
+                padding: 8px 12px;
+                background-color: $color-button-primary-active;
+                @include font(1rem, 400);
+                color: $color-text-on-primary;
+
+                &:hover {
+                    background-color: $color-button-primary-hover;
+                }
+            }
+        }
+    }
+
+    &__user {
+        border: solid 1px $color-divider;
+        background-color: rgba($color-info-200, .1);
+
+        &:hover {
+            background-color: rgba($color-info-200, .3); 
+        }
+
+        &__avatar {
+            @include font(1rem, 600);
+            color: $color-text-on-primary;
+        }
+
+        &__user-data {
+            line-height: 16px;
+            & h3 {
+                @include font(1.2rem, 600);
+                color: $color-text-primary;
+            }
+            & h4 {
+                @include font(.9rem, 400);
+                color: $color-text-secondary;
+            }
+        }
+    }
+}
