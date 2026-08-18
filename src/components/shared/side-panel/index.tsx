@@ -16,7 +16,6 @@ const pages = [
   { _id: "1", label: "Главная", page: "/dashboard", icon: <HomeIcon /> },
   { _id: "2", label: "Мои задачи", page: "/todos", icon: <TasksIcon /> },
   { _id: "3", label: "Компания/проект", page: "/project", icon: <ProjectIcon /> },
-  { _id: "4", label: "Статистика", page: "/stats", icon: <StatsIcon /> },
 ];
 
 const tasksCount = 3;

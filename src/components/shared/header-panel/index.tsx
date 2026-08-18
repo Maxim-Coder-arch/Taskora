@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 import styles from "./index.module.scss";
 import { users, ITeam, ISpace, IProject } from "../../../types/connections/connections.type";
+import DashboardTabs from "../dashboard-tabs";
 
 interface IHeaderPanelProps {
   currentUserId: string;
@@ -92,6 +93,13 @@ const HeaderPanel = ({
             </div>
           </button>
 
+          <button className={`${styles["header-panel__add-new-project"]} flex gap-2 justify-between rounded-lg cursor-pointer transition-colors`}>
+            <span>Новый проект</span>
+            <div className={"rotate-180"}>
+              <ArrowIcon />
+            </div>
+          </button>
+
           <div className={`${styles["header-panel__active"]} flex items-center gap-2`}>
             <span className="text-[#c4b5fd]">{activeTeam?.name ?? "Нет команды"}</span>
             <div className="w-[6px] h-[6px] bg-[#7c5cff] rounded-full" />
@@ -114,13 +122,6 @@ const HeaderPanel = ({
               ))}
             </div>
           )}
-
-          <button className={`${styles["header-panel__add-new-project"]} flex gap-2 justify-between rounded-lg cursor-pointer transition-colors`}>
-            <span>Новый проект</span>
-            <div className={"rotate-180"}>
-              <ArrowIcon />
-            </div>
-          </button>
         </div>
 
         <div className={`${styles["header-panel__user-control"]} flex gap-4 items-center`}>
@@ -178,7 +179,9 @@ const HeaderPanel = ({
         </div>
       </div>
 
-      <div className={`${styles["project-info"]} w-full p-3 flex justify-between items-center`}>
+      <DashboardTabs />
+
+      <div className={`${styles["project-info"]} w-full p-3 flex justify-between items-center absolute bottom-0 bg-[#eff6ff]`}>
         <div className={`${styles["project-info__title"]}`}>
           <h2>{activeProject?.name ?? "Нет проекта"}</h2>
           <p>{activeProject?.description ?? ""}</p>

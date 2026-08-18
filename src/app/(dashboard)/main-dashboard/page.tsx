@@ -1,6 +1,8 @@
 const DashboardPage = () => {
     return (
-        <h1></h1>
+        <div className="flex flex-col p-3">
+            
+        </div>
     )
 }
 

@@ -10,9 +10,10 @@ import {
   spaces as mockSpaces,
 } from "@/src/types/connections/connections.type";
 import type { ITeam, IProject, ISpace } from "@/src/types/connections/connections.type";
+import DashboardTabs from "@/src/components/shared/dashboard-tabs";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
-  const currentUserId = "user_1";
+  const currentUserId = "user_2";
 
   const [teams, setTeams] = useState<ITeam[]>(mockTeams);
   const [projects, setProjects] = useState<IProject[]>(mockProjects);
@@ -38,7 +39,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
         activeSpaceId={activeSpaceId}
         setActiveSpaceId={setActiveSpaceId}
       />
-      <main className="flex flex-col w-full pt-3">
+      <main className="flex flex-col w-full pt-3 relative">
         <HeaderPanel
           currentUserId={currentUserId}
           projects={projects}
@@ -51,6 +52,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           setActiveTeamId={setActiveTeamId}
           setActiveSpaceId={setActiveSpaceId}
         />
+
         {children}
       </main>
     </div>

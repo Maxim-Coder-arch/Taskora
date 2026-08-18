@@ -1,0 +1,35 @@
+@use "../../../styles/includes.scss" as *;
+
+.dashboard-tabs {
+    border-bottom: solid 1px $color-divider;
+    border-top: solid 1px $color-divider;
+    background-color: $color-info-50;
+
+    &__tab {
+        & a {
+            @include font(1rem, 600);
+            color: $color-text-primary;
+        }
+    }
+
+    &__control {
+        &__new-user {
+            padding: 8px 12px;
+            border: solid 1px $color-info-500;
+            color: $color-info-500;
+            @include font(1rem, 600);
+
+            &:hover {
+                background-color: $color-info-100;
+            }
+        }
+
+        &__additional {
+            border: solid 1px $color-info-500;
+
+            &:hover {
+                background-color: $color-info-100;
+            }
+        }
+    }
+}
