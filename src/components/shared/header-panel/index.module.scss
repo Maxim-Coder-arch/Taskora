@@ -10,6 +10,57 @@
         }
     }
 
+    &__add-new-project {
+        width: fit-content;
+        min-width: 200px;
+        padding: 8px 12px;
+        border: solid 1px $color-brand-300;
+
+        & span {
+            color: $color-brand-500 !important;
+        }
+
+        &:hover {
+            background-color: $color-brand-100 !important;
+        }
+    }
+
+    &__active-project {
+        & button {
+            min-width: 200px;
+            padding: 8px 12px;
+            border: solid 1px $color-divider;
+
+            & span {
+                @include font(1.2rem, 600);
+                color: $color-success-500;
+            }
+
+            & svg {
+                color: $color-success-500;
+                width: 30px;
+                height: 30px;
+            }
+
+            &:hover {
+                background-color: rgba($color-success-100, .5);
+            }
+        }
+        &__choose-project {
+            & button {
+                border: none;
+                background-color: rgba($color-brand-300, .2);
+
+                &:hover {
+                    background-color: rgba($color-brand-300, .4);
+                }
+
+                @include font(1rem, 500);
+                color: $color-brand-600;
+            }
+        }
+    }
+
     &__user-control {
         &__settings {
             cursor: pointer;
@@ -73,6 +124,20 @@
                 @include font(.9rem, 400);
                 color: $color-text-secondary;
             }
+        }
+    }
+}
+
+.project-info {
+    &__title {
+        & h2 {
+            @include font(2rem, 600);
+            color: $color-text-primary;
+        }
+
+        & p {
+            @include font(.9rem, 400);
+            color: $color-text-secondary;
         }
     }
 }

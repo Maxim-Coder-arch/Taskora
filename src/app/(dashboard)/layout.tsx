@@ -9,17 +9,17 @@ import {
   projects as mockProjects,
   spaces as mockSpaces,
 } from "@/src/types/connections/connections.type";
+import type { ITeam, IProject, ISpace } from "@/src/types/connections/connections.type";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const currentUserId = "user_1";
 
-  const [teams, setTeams] = useState(mockTeams);
-  const [projects, setProjects] = useState(mockProjects);
-  const [spaces, setSpaces] = useState(mockSpaces);
-
-  const [activeTeamId, setActiveTeamId] = useState("team_1");
+  const [teams, setTeams] = useState<ITeam[]>(mockTeams);
+  const [projects, setProjects] = useState<IProject[]>(mockProjects);
+  const [spaces, setSpaces] = useState<ISpace[]>(mockSpaces);
   const [activeProjectId, setActiveProjectId] = useState<string | null>("project_1");
-  const [activeSpaceId, setActiveSpaceId] = useState<string | null>("space_2");
+  const [activeTeamId, setActiveTeamId] = useState<string | null>("team_1");
+  const [activeSpaceId, setActiveSpaceId] = useState<string | null>("space_1");
 
   return (
     <div className="flex h-screen">
@@ -31,20 +31,25 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
         setProjects={setProjects}
         spaces={spaces}
         setSpaces={setSpaces}
-        activeTeamId={activeTeamId}
-        setActiveTeamId={setActiveTeamId}
         activeProjectId={activeProjectId}
         setActiveProjectId={setActiveProjectId}
+        activeTeamId={activeTeamId}
+        setActiveTeamId={setActiveTeamId}
         activeSpaceId={activeSpaceId}
         setActiveSpaceId={setActiveSpaceId}
       />
       <main className="flex flex-col w-full pt-3">
         <HeaderPanel
           currentUserId={currentUserId}
+          projects={projects}
           teams={teams}
           spaces={spaces}
+          activeProjectId={activeProjectId}
           activeTeamId={activeTeamId}
           activeSpaceId={activeSpaceId}
+          setActiveProjectId={setActiveProjectId}
+          setActiveTeamId={setActiveTeamId}
+          setActiveSpaceId={setActiveSpaceId}
         />
         {children}
       </main>

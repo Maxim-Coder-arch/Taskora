@@ -22,56 +22,35 @@ const circleColors = [
 interface ISpacesProps {
   spaces: ISpace[];
   setSpaces: Dispatch<SetStateAction<ISpace[]>>;
-  activeProjectId: string | null;
+  activeTeamId: string | null;
   activeSpaceId: string | null;
-  setActiveSpaceId: (spaceId: string | null) => void;
+  setActiveSpaceId: Dispatch<SetStateAction<string | null>>;
 }
 
 const Spaces = ({
   spaces,
   setSpaces,
-  activeProjectId,
+  activeTeamId,
   activeSpaceId,
   setActiveSpaceId,
 }: ISpacesProps) => {
-  const projectSpaces = spaces.filter((space) => space.projectId === activeProjectId);
+  const teamSpaces = spaces.filter((space) => space.teamId === activeTeamId);
 
   const [addingSpace, setAddingSpace] = useState(false);
   const [spaceName, setSpaceName] = useState("");
   const [activeColor, setActiveColor] = useState(circleColors[0]);
   const [isSelectedColor, setIsSelectedColor] = useState(false);
 
-  const handleChoiceSpace = (id: string) => {
-    setActiveSpaceId(id);
-  };
-
-  const handleAddingSpace = () => {
-    setAddingSpace((prev) => !prev);
-    setIsSelectedColor(false);
-  };
-
-  const handleSpaceName = (value: string) => {
-    setSpaceName(value);
-  };
-
-  const handleSetSelectedColor = () => {
-    setIsSelectedColor((prev) => !prev);
-  };
-
-  const handleSetActiveColor = (color: string) => {
-    setActiveColor(color);
-    setIsSelectedColor(false);
-  };
-
   const handleAddSpace = () => {
-    if (!spaceName.trim()) return;
-    if (!activeProjectId) return;
+    const trimmedName = spaceName.trim();
+    if (!trimmedName) return;
+    if (!activeTeamId) return;
 
     const newSpace: ISpace = {
       _id: crypto.randomUUID(),
-      name: spaceName.trim(),
+      name: trimmedName,
       color: activeColor,
-      projectId: activeProjectId,
+      teamId: activeTeamId,
       createdAt: new Date().toISOString(),
     };
 
@@ -90,8 +69,12 @@ const Spaces = ({
       >
         <span>Доски</span>
         <button
+          type="button"
           className="cursor-pointer transition-colors rounded-lg"
-          onClick={handleAddingSpace}
+          onClick={() => {
+            setAddingSpace((prev) => !prev);
+            setIsSelectedColor(false);
+          }}
         >
           {addingSpace ? <MinusIcon /> : <PlusIcon />}
         </button>
@@ -107,12 +90,12 @@ const Spaces = ({
               placeholder="Новая доска..."
               className="w-full"
               value={spaceName}
-              onChange={(e) => handleSpaceName(e.target.value)}
+              onChange={(event) => setSpaceName(event.target.value)}
             />
             <button
+              type="button"
               className="cursor-pointer"
-              title="Выбрать декоративный цвет"
-              onClick={handleSetSelectedColor}
+              onClick={() => setIsSelectedColor((prev) => !prev)}
             >
               <div
                 className="w-[22px] h-[22px] rounded-full"
@@ -122,6 +105,7 @@ const Spaces = ({
           </div>
 
           <button
+            type="button"
             className={`${styles["side-panel__spaces__add-space__button"]} rounded-lg cursor-pointer transition-colors w-full`}
             onClick={handleAddSpace}
           >
@@ -135,9 +119,13 @@ const Spaces = ({
               {circleColors.map((color) => (
                 <button
                   key={color}
+                  type="button"
                   className="w-[16px] h-[16px] cursor-pointer rounded-full"
                   style={{ backgroundColor: color }}
-                  onClick={() => handleSetActiveColor(color)}
+                  onClick={() => {
+                    setActiveColor(color);
+                    setIsSelectedColor(false);
+                  }}
                 />
               ))}
             </div>
@@ -146,9 +134,10 @@ const Spaces = ({
       )}
 
       <div className={`${styles["side-panel__spaces__list"]} flex flex-col gap-3`}>
-        {projectSpaces.map((space) => (
+        {teamSpaces.map((space) => (
           <button
             key={space._id}
+            type="button"
             className={`
               w-full
               flex
@@ -160,7 +149,7 @@ const Spaces = ({
               rounded-lg
               ${activeSpaceId === space._id ? styles["side-panel__spaces__list__active"] : ""}
             `}
-            onClick={() => handleChoiceSpace(space._id)}
+            onClick={() => setActiveSpaceId(space._id)}
           >
             <div
               className="w-[12px] h-[12px] rounded-full"

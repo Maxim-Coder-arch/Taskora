@@ -3,16 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-
 import styles from "./index.module.scss";
 import TeamChoice from "./ui/team-choice";
 import Spaces from "./ui/spaces";
-
 import HomeIcon from "@/public/icons/home";
 import TasksIcon from "@/public/icons/tasks";
 import ProjectIcon from "@/public/icons/project";
 import StatsIcon from "@/public/icons/stats";
-
 import type { ITeam, IProject, ISpace } from "@/src/types/connections/connections.type";
 
 const pages = [
@@ -32,12 +29,12 @@ interface ISidePanelProps {
   setProjects: Dispatch<SetStateAction<IProject[]>>;
   spaces: ISpace[];
   setSpaces: Dispatch<SetStateAction<ISpace[]>>;
-  activeTeamId: string;
-  setActiveTeamId: (teamId: string) => void;
   activeProjectId: string | null;
-  setActiveProjectId: (projectId: string | null) => void;
+  setActiveProjectId: Dispatch<SetStateAction<string | null>>;
+  activeTeamId: string | null;
+  setActiveTeamId: Dispatch<SetStateAction<string | null>>;
   activeSpaceId: string | null;
-  setActiveSpaceId: (spaceId: string | null) => void;
+  setActiveSpaceId: Dispatch<SetStateAction<string | null>>;
 }
 
 const SidePanel = ({
@@ -48,10 +45,10 @@ const SidePanel = ({
   setProjects,
   spaces,
   setSpaces,
-  activeTeamId,
-  setActiveTeamId,
   activeProjectId,
   setActiveProjectId,
+  activeTeamId,
+  setActiveTeamId,
   activeSpaceId,
   setActiveSpaceId,
 }: ISidePanelProps) => {
@@ -59,7 +56,7 @@ const SidePanel = ({
     <nav className={`${styles["side-panel"]} p-3 flex flex-col`}>
       <div className="flex flex-col gap-6">
         <div className={`${styles["side-panel__logo"]} flex gap-3 items-center`}>
-          <Image src="/logotypes/taskora.png" width={50} height={50} alt="[logotype]" />
+          <Image src="/logotypes/taskora.png" width={50} height={50} alt="Taskora" />
           <span>Taskora</span>
         </div>
 
@@ -71,6 +68,7 @@ const SidePanel = ({
           setProjects={setProjects}
           spaces={spaces}
           setSpaces={setSpaces}
+          activeProjectId={activeProjectId}
           activeTeamId={activeTeamId}
           setActiveTeamId={setActiveTeamId}
           setActiveProjectId={setActiveProjectId}
@@ -100,7 +98,7 @@ const SidePanel = ({
         <Spaces
           spaces={spaces}
           setSpaces={setSpaces}
-          activeProjectId={activeProjectId}
+          activeTeamId={activeTeamId}
           activeSpaceId={activeSpaceId}
           setActiveSpaceId={setActiveSpaceId}
         />
