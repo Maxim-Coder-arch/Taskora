@@ -37,6 +37,7 @@ const HeaderPanel = ({
 }: IHeaderPanelProps) => {
   const [openedProfilePoints, setOpenedProfilePoints] = useState(false);
   const [chooseProject, setChooseProject] = useState(false);
+  const [showProjectDetails, setShowProjectDetails] = useState(false);
 
   const activeUser = users.find((user) => user._id === currentUserId);
   const activeProject = projects.find((project) => project._id === activeProjectId);
@@ -179,9 +180,9 @@ const HeaderPanel = ({
         </div>
       </div>
 
-      <DashboardTabs />
+      <DashboardTabs setShowProjectDetails={setShowProjectDetails} showProjectDetails={showProjectDetails} />
 
-      <div className={`${styles["project-info"]} w-full p-3 flex justify-between items-center absolute bottom-0 bg-[#eff6ff]`}>
+      {showProjectDetails && <div className={`${styles["project-info"]} w-full p-3 flex justify-between items-center bg-[#eff6ff]`}>
         <div className={`${styles["project-info__title"]}`}>
           <h2>{activeProject?.name ?? "Нет проекта"}</h2>
           <p>{activeProject?.description ?? ""}</p>
@@ -208,7 +209,7 @@ const HeaderPanel = ({
                 </div>
             )}
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

@@ -52,7 +52,6 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           setActiveTeamId={setActiveTeamId}
           setActiveSpaceId={setActiveSpaceId}
         />
-
         {children}
       </main>
     </div>

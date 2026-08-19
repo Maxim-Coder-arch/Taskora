@@ -8,6 +8,8 @@ import { JSX } from "react/jsx-runtime";
 import AddUserIcon from "@/public/icons/addUser";
 import StatsIcon from "@/public/icons/stats";
 import EllipsisIcon from "@/public/icons/ellipsis";
+import ArrowIcon from "@/public/icons/arrow";
+import { Dispatch, SetStateAction } from "react";
 
 
 interface ITab {
@@ -51,7 +53,7 @@ const dataTabs: ITab[] = [
 ]
 
 
-const DashboardTabs = () => {
+const DashboardTabs = ({ setShowProjectDetails, showProjectDetails }: {setShowProjectDetails: Dispatch<SetStateAction<boolean>>, showProjectDetails: boolean}) => {
     return (
         <div className={`${styles["dashboard-tabs"]} w-full pb-6 pt-6 pl-3 pr-3 flex items-center justify-between`}>
             <div className={`${styles["dashboard-tabs__tab"]} flex gap-6`}>
@@ -71,6 +73,13 @@ const DashboardTabs = () => {
                         <AddUserIcon />
                     </div>
                     <span>Пользователь</span>
+                </button>
+
+                <button className={`${styles["dashboard-tabs__control__new-user"]} flex gap-1 items-center rounded-lg cursor-pointer transition-colors`} onClick={() => setShowProjectDetails(prev => !prev)}>
+                    <div className={`${showProjectDetails ? "rotate-0" : "rotate-180"} transition-transform`}>
+                        <ArrowIcon />
+                    </div>
+                    <span>Детали</span>
                 </button>
 
                 <button className={`${styles["dashboard-tabs__control__additional"]} h-[40px] w-[40px] flex items-center justify-center rounded-lg cursor-pointer transition-colors`}>
